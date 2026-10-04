@@ -1289,13 +1289,29 @@ src="https://www.facebook.com/tr?id=1160695265037280&ev=PageView&noscript=1"
   var pMap = {1:8,2:14,3:20,4:26,5:32,6:36,7:42,8:48,9:54,10:60,11:66,12:72,13:78,14:84,15:88,16:92,17:95,18:97,19:99,20:99,21:99,22:100};
 
   // ===== CHECKOUT: salva estado e navega na mesma aba =====
+  function appendTrackingParams(url) {
+    try {
+      var src = new URLSearchParams(window.location.search);
+      var params = new URLSearchParams();
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function(k){
+        var v = src.get(k);
+        if (v) params.set(k, v);
+      });
+      var qs = params.toString();
+      if (!qs) return url;
+      return url + (url.indexOf('?') > -1 ? '&' : '?') + qs;
+    } catch(e) {
+      return url;
+    }
+  }
+
   function goCheckout(url) {
     try {
       sessionStorage.setItem('quiz_cur', cur);
       sessionStorage.setItem('quiz_state', JSON.stringify(state));
       sessionStorage.setItem('quiz_scroll', window.scrollY);
     } catch(e) {}
-    window.location.assign(url);
+    window.location.assign(appendTrackingParams(url));
   }
 
   // ===== RESTAURA ESTADO ao voltar do checkout =====
