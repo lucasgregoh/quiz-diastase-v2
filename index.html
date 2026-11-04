@@ -501,6 +501,27 @@ src="https://www.facebook.com/tr?id=1160695265037280&ev=PageView&noscript=1"
   .modal-downsell-price { font-size: 58px; font-weight: 900; color: var(--rose-dark); line-height: 1; margin-bottom: 8px; }
   .modal-downsell-warning { font-size: 11.5px; color: #E8884A; font-weight: 700; margin-bottom: 16px; }
 
+
+  /* ===== POLITICA DE PRIVACIDADE E TERMOS (JANELA INTERNA) ===== */
+  .legal-links { text-align: center; font-size: 11px; color: var(--light-mid); margin-top: 14px; line-height: 1.6; }
+  .legal-links a { color: var(--light-mid); text-decoration: underline; cursor: pointer; }
+  .legal-links .legal-copy { display: block; margin-top: 4px; }
+  .legal-overlay { position: fixed; inset: 0; background: rgba(20,14,12,0.62); display: none; align-items: center; justify-content: center; z-index: 9500; padding: 16px; }
+  .legal-overlay.show { display: flex; }
+  .legal-box { position: relative; background: #fff; border-radius: 18px; width: 100%; max-width: 520px; max-height: 88vh; max-height: 88dvh; display: flex; flex-direction: column; box-shadow: 0 12px 40px rgba(0,0,0,0.25); overflow: hidden; }
+  .legal-head { display: flex; align-items: center; gap: 8px; padding: 12px 12px 10px 14px; border-bottom: 1px solid #F0E6E2; flex-shrink: 0; }
+  .legal-tabs { display: flex; gap: 6px; flex: 1; min-width: 0; }
+  .legal-tab { background: #F5EDEE; border: none; border-radius: 999px; padding: 7px 12px; font-size: 12.5px; font-weight: 600; color: var(--mid); cursor: pointer; font-family: inherit; }
+  .legal-tab.active { background: var(--rose); color: #fff; }
+  .legal-close { background: #F5EDEE; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 17px; color: var(--mid); cursor: pointer; flex-shrink: 0; }
+  .legal-body { overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 16px 18px 24px; font-size: 13.5px; line-height: 1.6; color: var(--mid); text-align: left; }
+  .legal-body h2 { font-size: 17px; font-weight: 800; color: var(--rose-dark); margin: 0 0 8px; }
+  .legal-body h3 { font-size: 14px; font-weight: 700; color: var(--rose-dark); margin: 16px 0 4px; }
+  .legal-body p { margin: 0 0 8px; }
+  .legal-body ul { margin: 0 0 8px 18px; padding: 0; }
+  .legal-body li { margin-bottom: 4px; }
+  .legal-panel { display: none; }
+  .legal-panel.show { display: block; }
 </style>
 </head>
 <body>
@@ -1244,7 +1265,12 @@ src="https://www.facebook.com/tr?id=1160695265037280&ev=PageView&noscript=1"
       <button class="btn btn-pulse" onclick="scrollToOffers()">QUERO COMEÇAR MINHA TRANSFORMAÇÃO →</button>
     </div>
 
-    <p class="privacy" style="margin-top:4px">🔒 Pagamento 100% seguro · Gregoh Pay · Cartão ou Pix</p>
+    <p class="privacy" style="margin-top:4px">🔒 Pagamento 100% seguro · Cartão ou Pix</p>
+
+    <div class="legal-links">
+      <a href="#privacidade" onclick="openLegal('privacidade'); return false;">Política de Privacidade</a> · <a href="#termos" onclick="openLegal('termos'); return false;">Termos de Uso</a>
+      <span class="legal-copy">Myrnna Gurgel Educação Ltda © 2026 - Todos os direitos reservados<br>CNPJ 68.648.346/0001-34</span>
+    </div>
 
   </div>
 
@@ -1274,6 +1300,95 @@ src="https://www.facebook.com/tr?id=1160695265037280&ev=PageView&noscript=1"
 
   </div>
 </div>
+<!-- JANELA INTERNA: POLITICA DE PRIVACIDADE E TERMOS DE USO -->
+<div class="legal-overlay" id="legalModal">
+  <div class="legal-box" role="dialog" aria-modal="true" aria-label="Política de Privacidade e Termos de Uso">
+    <div class="legal-head">
+      <div class="legal-tabs">
+        <button class="legal-tab" data-legal="privacidade" onclick="openLegal('privacidade')">Privacidade</button>
+        <button class="legal-tab" data-legal="termos" onclick="openLegal('termos')">Termos de Uso</button>
+      </div>
+      <button class="legal-close" onclick="closeLegal()" aria-label="Fechar">✕</button>
+    </div>
+    <div class="legal-body">
+
+      <div class="legal-panel" data-legal="privacidade">
+        <h2>Política de Privacidade</h2>
+        <p>Esta Política explica como a Myrnna Gurgel Educação Ltda (CNPJ 68.648.346/0001-34) trata os seus dados pessoais quando você usa o quiz e compra o Desafio Fecha Diástase, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018, a LGPD). Última atualização: 4 de novembro de 2026.</p>
+
+        <h3>1. Quem é o responsável pelos seus dados</h3>
+        <p>A controladora dos dados é a Myrnna Gurgel Educação Ltda, CNPJ 68.648.346/0001-34. Para qualquer assunto de privacidade, fale conosco pelo e-mail socialmyrnnagurgel@gmail.com ou pelo WhatsApp (85) 99222-5227.</p>
+
+        <h3>2. Quais dados coletamos</h3>
+        <ul>
+          <li><strong>No quiz:</strong> seu nome e as respostas do diagnóstico, como peso, altura, peso ideal e informações sobre o seu corpo e a sua rotina. Como se relacionam à saúde, essas respostas podem ser dados pessoais sensíveis e só são usadas com o seu consentimento.</li>
+          <li><strong>Na compra:</strong> nome completo, e-mail, CPF, telefone (WhatsApp) e os dados do pagamento, que são enviados ao Pagar.me para processar a cobrança.</li>
+          <li><strong>Automáticos:</strong> páginas visitadas, ações no quiz, origem do acesso (por exemplo, o anúncio que você clicou), tipo de aparelho e endereço IP, coletados por ferramentas de mensuração de anúncios.</li>
+        </ul>
+
+        <h3>3. Para que usamos os dados</h3>
+        <ul>
+          <li>Montar o seu resultado personalizado no quiz.</li>
+          <li>Processar o pagamento, liberar o acesso ao produto e enviar o e-mail e a mensagem de boas-vindas.</li>
+          <li>Prestar suporte e responder a pedidos de reembolso.</li>
+          <li>Medir e melhorar nossos anúncios e o funil, inclusive com o Pixel e a API de Conversões da Meta.</li>
+          <li>Cumprir obrigações legais, fiscais e contábeis.</li>
+        </ul>
+
+        <h3>4. Com quem compartilhamos</h3>
+        <p>Compartilhamos dados apenas com empresas que nos ajudam a operar, nos limites necessários: Pagar.me (pagamentos), Meta (anúncios, Pixel e WhatsApp), Resend (e-mails), Supabase (banco de dados), Cloudflare e Vercel (hospedagem) e Make.com (automações). Não vendemos os seus dados.</p>
+        <p>Algumas dessas empresas armazenam dados em servidores fora do Brasil. Nesses casos, a transferência segue as regras da LGPD.</p>
+
+        <h3>5. Por quanto tempo guardamos</h3>
+        <p>Guardamos os dados pelo tempo necessário para as finalidades acima e para cumprir prazos legais, como os fiscais. Depois disso, eles são apagados ou anonimizados.</p>
+
+        <h3>6. Os seus direitos</h3>
+        <p>Você pode, a qualquer momento, pedir: confirmação de que tratamos os seus dados, acesso, correção, anonimização ou exclusão, portabilidade, informação sobre com quem compartilhamos e a revogação do seu consentimento. Basta escrever para socialmyrnnagurgel@gmail.com. Também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+        <h3>7. Segurança, menores e mudanças</h3>
+        <p>Usamos medidas técnicas para proteger os dados, mas nenhum sistema é totalmente imune a falhas. O quiz e o produto não são destinados a menores de 18 anos. Podemos atualizar esta Política, e a versão em vigor é sempre a publicada aqui, com a data de atualização no topo.</p>
+      </div>
+
+      <div class="legal-panel" data-legal="termos">
+        <h2>Termos de Uso</h2>
+        <p>Estes Termos regulam o uso do quiz e a compra do Desafio Fecha Diástase, oferecido pela Myrnna Gurgel Educação Ltda (CNPJ 68.648.346/0001-34). Ao usar o quiz ou concluir uma compra, você declara que leu e concorda com estes Termos e com a Política de Privacidade. Última atualização: 4 de novembro de 2026.</p>
+
+        <h3>1. O que é o produto</h3>
+        <p>O Desafio Fecha Diástase é um programa digital de exercícios e orientações de 21 dias, entregue online. O quiz gera uma indicação personalizada, que tem caráter informativo e não é um diagnóstico médico.</p>
+
+        <h3>2. Planos</h3>
+        <ul>
+          <li><strong>Plano Completo:</strong> pagamento único, acesso vitalício, atualizações, bônus, suporte pelo WhatsApp, mentorias ao vivo em grupo e garantia de 90 dias, conforme descrito na página de oferta.</li>
+          <li><strong>Plano Básico:</strong> pagamento único, acesso por 7 dias, sem atualizações, sem bônus e sem suporte. Não tem a garantia de 90 dias, mas continua valendo o direito de arrependimento do item 5.</li>
+        </ul>
+        <p>Os benefícios de cada plano são os informados na página de oferta no momento da compra.</p>
+
+        <h3>3. Preços e ofertas por tempo limitado</h3>
+        <p>Os preços e as condições podem mudar sem aviso prévio. Vale o preço exibido no checkout no momento em que você finaliza a compra.</p>
+        <p>Promoções são limitadas por tempo ou por quantidade.</p>
+
+        <h3>4. Pagamento e acesso</h3>
+        <p>O pagamento é processado pelo Pagar.me, por Pix ou cartão. Confirmado o pagamento, enviamos o acesso ao e-mail informado na compra. Confira o e-mail digitado e a caixa de spam. Se não receber, fale com o suporte.</p>
+
+        <h3>5. Reembolso e direito de arrependimento</h3>
+        <p>Como a compra é feita pela internet, você pode desistir em até 7 dias corridos contados da compra e receber o valor de volta, conforme o art. 49 do Código de Defesa do Consumidor. Isso vale para os dois planos.</p>
+        <p>Quem comprar o Plano Completo tem, além disso, a garantia de 90 dias: se não ver resultado, basta pedir o reembolso dentro desse prazo. Para pedir, escreva para socialmyrnnagurgel@gmail.com ou para o WhatsApp (85) 99222-5227, informando o nome e o e-mail da compra. O reembolso é feito pelo mesmo meio de pagamento.</p>
+
+        <h3>6. Aviso de saúde</h3>
+        <p>O conteúdo é educativo e não substitui consulta, diagnóstico ou acompanhamento de médico ou fisioterapeuta. Os resultados variam de pessoa para pessoa e não são garantidos. Se você está gestante, no pós-parto recente, fez cirurgia ou sente dor ou desconforto, procure um profissional antes de começar e pare em caso de dor.</p>
+
+        <h3>7. Propriedade intelectual</h3>
+        <p>O conteúdo do produto é protegido por direitos autorais e é de uso pessoal. Não é permitido copiar, revender, compartilhar acessos ou divulgar o material sem autorização por escrito.</p>
+
+        <h3>8. Suporte, mudanças e lei aplicável</h3>
+        <p>Suporte pelo e-mail socialmyrnnagurgel@gmail.com ou WhatsApp (85) 99222-5227. Podemos atualizar estes Termos, e a versão em vigor é a publicada aqui. Estes Termos seguem a lei brasileira.</p>
+        <p>Myrnna Gurgel Educação Ltda © 2026 - Todos os direitos reservados. CNPJ 68.648.346/0001-34.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <script>
   // ===== STATE GLOBAL =====
   var state = {
@@ -1829,6 +1944,57 @@ src="https://www.facebook.com/tr?id=1160695265037280&ev=PageView&noscript=1"
       };
     })();
   });
+</script>
+
+<script>
+  // ===== POLITICA DE PRIVACIDADE E TERMOS (JANELA INTERNA) =====
+  (function(){
+    var overlay = document.getElementById('legalModal');
+    if (!overlay) return;
+    var current = null;
+    function setHash(h){
+      try { history.replaceState(null, '', h ? '#' + h : location.pathname + location.search); } catch(e) {}
+    }
+    function paint(which){
+      var panels = overlay.querySelectorAll('.legal-panel');
+      for (var i = 0; i < panels.length; i++) {
+        panels[i].classList.toggle('show', panels[i].getAttribute('data-legal') === which);
+      }
+      var tabs = overlay.querySelectorAll('.legal-tab');
+      for (var j = 0; j < tabs.length; j++) {
+        tabs[j].classList.toggle('active', tabs[j].getAttribute('data-legal') === which);
+      }
+    }
+    window.openLegal = function(which){
+      if (which !== 'privacidade' && which !== 'termos') return;
+      paint(which);
+      var body = overlay.querySelector('.legal-body');
+      if (body) body.scrollTop = 0;
+      overlay.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      current = which;
+      setHash(which);
+    };
+    window.closeLegal = function(){
+      overlay.classList.remove('show');
+      document.body.style.overflow = '';
+      current = null;
+      setHash('');
+    };
+    overlay.addEventListener('click', function(e){ if (e.target === overlay) closeLegal(); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && current) closeLegal(); });
+    function hashWhich(){
+      var h = (location.hash || '').replace('#', '');
+      return (h === 'privacidade' || h === 'termos') ? h : null;
+    }
+    window.addEventListener('hashchange', function(){
+      var w = hashWhich();
+      if (w) { openLegal(w); }
+      else if (current) { overlay.classList.remove('show'); document.body.style.overflow = ''; current = null; }
+    });
+    var first = hashWhich();
+    if (first) openLegal(first);
+  })();
 </script>
 </body>
 </html>
